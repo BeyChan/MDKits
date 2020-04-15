@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MDKits'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = '快速开发框架'
 
 # This description is used to generate tags and improve search results.
@@ -30,6 +30,7 @@ Swift版本的快速开发框架
 
   s.platform     = :ios, '10.0'
   s.ios.deployment_target = '9.0'
+  s.swift_version = '5.0'
 
   s.source_files = 'MDKits/Classes/**/*'
   
