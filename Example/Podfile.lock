@@ -1,0 +1,63 @@
+PODS:
+  - Alamofire (4.9.1)
+  - Cache (5.2.0)
+  - Kingfisher (4.10.1)
+  - MBProgressHUD (1.2.0)
+  - MDKits (0.1.0):
+    - MDKits/AutoLayout (= 0.1.0)
+    - MDKits/Core (= 0.1.0)
+    - MDKits/Custom (= 0.1.0)
+    - MDKits/Extension (= 0.1.0)
+    - MDKits/Networking (= 0.1.0)
+    - MDKits/Presentation (= 0.1.0)
+    - MDKits/Refresh (= 0.1.0)
+    - MDKits/WebImage (= 0.1.0)
+  - MDKits/AutoLayout (0.1.0):
+    - MDKits/Core
+  - MDKits/Core (0.1.0)
+  - MDKits/Custom (0.1.0):
+    - MDKits/AutoLayout
+    - MDKits/Core
+    - MDKits/Extension
+  - MDKits/Extension (0.1.0):
+    - MDKits/Core
+  - MDKits/Networking (0.1.0):
+    - Alamofire
+    - Cache
+    - MBProgressHUD
+    - MDKits/Core
+  - MDKits/Presentation (0.1.0):
+    - MDKits/Extension
+  - MDKits/Refresh (0.1.0):
+    - MJRefresh
+  - MDKits/WebImage (0.1.0):
+    - Kingfisher
+    - MDKits/Core
+  - MJRefresh (3.4.1)
+
+DEPENDENCIES:
+  - MDKits (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Cache
+    - Kingfisher
+    - MBProgressHUD
+    - MJRefresh
+
+EXTERNAL SOURCES:
+  MDKits:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Cache: 807c5d86d01a177f06ede9865add3aea269bbfd4
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MDKits: b5a44763ab72d3142431b645673c9d4f7b04d50e
+  MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
+
+PODFILE CHECKSUM: 96a81b55286dd866bb4649091b62fac831335916
+
+COCOAPODS: 1.9.1
