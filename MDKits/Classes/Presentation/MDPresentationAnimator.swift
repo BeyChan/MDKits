@@ -48,7 +48,7 @@ extension MDPresentationAnimator:  UIViewControllerAnimatedTransitioning{
         case .center:
 //            let containerViewHeight = transitionContext.containerView.frame.size.height
 //            dismissedFrame.origin.y = isPresentation ? -containerViewHeight: containerViewHeight
-            controller.view.isHidden = isPresentation ? false : true
+            controller.view.alpha = isPresentation ? 0 : 1
             break
         }
         
