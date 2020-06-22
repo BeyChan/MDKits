@@ -1,6 +1,6 @@
 {
   "name": "MDKits",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "summary": "快速开发框架",
   "description": "Swift版本的快速开发框架",
   "homepage": "https://github.com/Marvin Chan/MDKits",
@@ -13,12 +13,13 @@
   },
   "source": {
     "git": "https://github.com/BeyChan/MDKits.git",
-    "tag": "0.1.2"
+    "tag": "0.1.5"
   },
   "platforms": {
     "ios": "9.0"
   },
   "swift_versions": "5.0",
+  "source_files": "MDKits/Classes/**/*",
   "frameworks": "UIKit",
   "subspecs": [
     {
@@ -78,11 +79,6 @@
     },
     {
       "name": "Presentation",
-      "dependencies": {
-        "MDKits/Extension": [
-
-        ]
-      },
       "source_files": "MDKits/Classes/Presentation/**/*"
     },
     {

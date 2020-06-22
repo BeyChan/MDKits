@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MDPresentationAnimator: NSObject {
+public class MDPresentationAnimator: NSObject {
     // MARK: - Properties
     let direction: MDPresentationDirection
     let isPresentation: Bool
@@ -22,11 +22,11 @@ class MDPresentationAnimator: NSObject {
 }
 
 extension MDPresentationAnimator:  UIViewControllerAnimatedTransitioning{
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.5
     }
     
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let key = isPresentation ? UITransitionContextViewControllerKey.to : UITransitionContextViewControllerKey.from
         let controller = transitionContext.viewController(forKey: key)!
         

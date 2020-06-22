@@ -9,7 +9,7 @@
 import UIKit
 
 /// 滑动关闭
-class MDPullDownPercentDrivenInteractiveTransition: MDPercentDrivenInteractiveTransition {
+ public class MDPullDownPercentDrivenInteractiveTransition: MDPercentDrivenInteractiveTransition {
     
     private var originY: CGFloat = 0
     
@@ -38,7 +38,7 @@ class MDPullDownPercentDrivenInteractiveTransition: MDPercentDrivenInteractiveTr
 }
 
 extension MDPullDownPercentDrivenInteractiveTransition: UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if let panGr = gestureRecognizer as? UIPanGestureRecognizer {
             let scrollVOffsetY = scrollView?.contentOffset.y ?? 0
             let offsetY = (panGr.view as? UIScrollView)?.contentOffset.y ?? 0
@@ -62,9 +62,8 @@ extension MDPullDownPercentDrivenInteractiveTransition: UIGestureRecognizerDeleg
             controller.view.transform = CGAffineTransform.identity.translatedBy(x: 0, y: originY)
             gesture.setTranslation(.zero, in: gesture.view)
         case .ended,.cancelled:
-            var fraction = abs(originY / (controller.view.md_height()))
+            var fraction = abs(originY / (controller.view.bounds.height))
             fraction = fmin(fmax(fraction, 0.0), 1.0)
-            MDLog("\(fraction)")
             self.shouldComplete = fraction > 0.4
             
             if (self.shouldComplete == false || gesture.state == .cancelled) {

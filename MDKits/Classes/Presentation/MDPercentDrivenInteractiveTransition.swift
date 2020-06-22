@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MDPercentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition {
+public class MDPercentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition {
     open var interacting: Bool = false
     open var shouldComplete: Bool = false
 }
