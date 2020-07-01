@@ -9,93 +9,88 @@
 import UIKit
 
 extension UIView {
-    // MARK: class method
-    public class func md_ScreenWidth() -> CGFloat {
-        return UIScreen.main.bounds.size.width
-    }
-    
-    public class func md_ScreenHeight() -> CGFloat {
-        return UIScreen.main.bounds.size.height
-    }
-    
-    public class func md_ScreenSize() -> CGSize {
-        return UIScreen.main.bounds.size
-    }
     //MARK: Size
-    public func md_height() -> CGFloat {
-        return frame.size.height
+    var md_height: CGFloat {
+        get {
+            return frame.size.height
+        }
+        set {
+            frame.size.height = newValue
+        }
+    }
+
+    var md_width: CGFloat {
+        get {
+            return frame.size.width
+        }
+        set {
+           frame.size.width = newValue
+        }
     }
     
-    public func md_setHeight(_ height:CGFloat) {
-        frame.size.height = height
-    }
-    
-    public func md_width() -> CGFloat {
-        return frame.size.width
-    }
-    
-    public func md_setWidth(_ width:CGFloat) {
-        frame.size.width = width
-    }
-    
-    public func md_size() -> CGSize {
-        return frame.size
-    }
-    
-    public func md_setSize(_ size:CGSize) {
-        frame.size = size
+    var md_size: CGSize {
+        get {
+            return frame.size
+        }
+        set {
+            frame.size = newValue
+        }
     }
     
     //MARK: Position
-    public func md_x() -> CGFloat {
-        return frame.origin.x
+    var md_x: CGFloat {
+        get {
+            return frame.origin.x
+        }
+        set {
+            frame.origin.x = newValue
+        }
+    }
+
+    var md_y: CGFloat {
+        get {
+            return frame.origin.y
+        }
+        set {
+            frame.origin.y = newValue
+        }
     }
     
-    public func md_setX(_ x:CGFloat) {
-        frame.origin.x = x
+    var md_centerX: CGFloat {
+        get {
+            return center.x
+        }
+        set {
+            center.x = newValue
+        }
     }
     
-    public func md_y() -> CGFloat {
-        return frame.origin.y
+    var md_centerY: CGFloat {
+        get {
+            return center.y
+        }
+        set {
+            center.y = newValue
+        }
     }
-    
-    public func md_setY(_ y:CGFloat) {
-        frame.origin.y = y
-    }
-    
-    public func md_centerX() -> CGFloat {
-        return center.x
-    }
-    
-    public func md_setCenterX(_ centerX:CGFloat) {
-        center.x = centerX
-    }
-    
-    public func md_centerY() -> CGFloat {
-        return center.y
-    }
-    
-    public func md_setCenterY(_ centerY:CGFloat) {
-        center.y = centerY
-    }
-    
+        
     //MARK: Shape
-    public func md_left() -> CGFloat {
+    var md_left: CGFloat {
         return frame.origin.x
     }
     
-    public func md_setLeft(_ left:CGFloat, shouldResize:Bool) {
+    func md_setLeft(_ left:CGFloat, shouldResize:Bool) {
         if shouldResize {
             frame.size.width = frame.origin.x - left + frame.size.width
         }
         frame.origin.x = left
     }
     
-    public func md_right() -> CGFloat {
+    var md_right: CGFloat {
         return frame.origin.x + frame.size.width
     }
-    
-    public func md_setRight(_ right:CGFloat, shouldResize:Bool) {
+
+    func md_setRight(_ right:CGFloat, shouldResize:Bool) {
         if shouldResize {
             frame.size.width = right - frame.origin.x
         } else {
@@ -103,11 +98,11 @@ extension UIView {
         }
     }
     
-    public func md_bottom() -> CGFloat {
+    var md_bottom: CGFloat {
         return frame.origin.y + frame.size.height
     }
     
-    public func md_setBottom(_ bottom:CGFloat, shouldResize:Bool) {
+    func md_setBottom(_ bottom:CGFloat, shouldResize:Bool) {
         if shouldResize {
             frame.size.height = bottom - frame.origin.y
         } else {
@@ -115,11 +110,11 @@ extension UIView {
         }
     }
     
-    public func md_top() -> CGFloat {
+    var md_top: CGFloat {
         return frame.origin.y
     }
     
-    public func md_setTop(_ top:CGFloat, shouldResize:Bool) {
+    func md_setTop(_ top:CGFloat, shouldResize:Bool) {
         if shouldResize {
             frame.size.height = frame.size.height - top + frame.origin.y
         }
@@ -127,22 +122,22 @@ extension UIView {
     }
     
     //MARK: Center Position with Other View
-    public func md_setCenterXEqualToView(_ view:UIView) {
+    func md_setCenterXEqualToView(_ view:UIView) {
         let superView = view.superview ?? view
         let topSuperView = md_topSuperView()
         
         let viewCenterPoint = superView.convert(view.center, to:topSuperView)
         let centerPoint = topSuperView.convert(viewCenterPoint, to:superview)
-        md_setCenterX(centerPoint.x)
+        self.md_centerX = centerPoint.x
     }
     
-    public func md_setCenterYEqualToView(_ view:UIView) {
+    func md_setCenterYEqualToView(_ view:UIView) {
         let superView = view.superview ?? view
         let topSuperView = md_topSuperView()
         
         let viewCenterPoint = superView.convert(view.center, to:topSuperView)
         let centerPoint = topSuperView.convert(viewCenterPoint, to:superview)
-        md_setCenterY(centerPoint.y)
+        self.md_centerY = centerPoint.y
     }
     
     public func md_setCenterEqualToView(_ view:UIView) {

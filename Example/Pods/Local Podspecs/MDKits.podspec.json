@@ -1,6 +1,6 @@
 {
   "name": "MDKits",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "summary": "快速开发框架",
   "description": "Swift版本的快速开发框架",
   "homepage": "https://github.com/Marvin Chan/MDKits",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/BeyChan/MDKits.git",
-    "tag": "0.1.5"
+    "tag": "0.1.6"
   },
   "platforms": {
     "ios": "9.0"
